@@ -100,6 +100,27 @@ console.log(sum1);
 // Input array: [3, 4, 12, 8]
 // 	Output: The array isn’t symmetric.
 
+var h = [2, 4, -2, 7, -2, 4, 2];
+var middleIndex = (h.length / 2) - 0.5;
+var typeOfArray;
+
+if (h.length % 2 === 0) {
+    console.log("The array is not symmetric.")
+} else {
+    for (var i = 1; i <= middleIndex; i++){
+        if (h[middleIndex - i] !== h[middleIndex + i]){
+            typeOfArray = true;
+        }
+    }
+    if (typeOfArray === true){
+        console.log("The array is not symmetric.");
+    } else{
+        console.log("The array is symmetric.")
+    }
+}
+
+
+
 
 // 7. Write a program that intertwines two arrays. You can assume the arrays are of the same length. 
 // Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
@@ -110,7 +131,7 @@ var j = [3, 8, 11, 9];
 var m = [];   // prazan niz u koji cemo da slazemo predhodna dva
 
 for (i = 0; i < k.length; i++){
-    m[m.length] = k[i];         // m.length odredjuje se duzina niza c
+    m[m.length] = k[i];         // m.length odredjuje se duzina niza m
     m[m.length] = j[i];
 }
 console.log(m);
@@ -157,7 +178,18 @@ var t = 78;
 var positOfIndex = 3;
 var a1 = [2, -2, 33, 12, 5, 8];
 var a2 = [];
+var j = 0;
 
-for (i = 0; i < a1.length; i++){
-    
-}
+if (positOfIndex < a1.length) {
+    for (i = 0; i < a1.length; i++){
+        if (positOfIndex === i) {
+            a2[j] = t;
+            a2[j + 1] = a1[i];
+            j += 2
+        } else {
+            a2[j] = a1[i];
+            j++
+        }
+    } 
+} 
+console.log(a2);
