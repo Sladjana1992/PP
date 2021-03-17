@@ -65,14 +65,14 @@ console.log(min, index);
 var array = [4, 2, 2, -1, 6];
 var min = array[0];
 
-for (i = 0; i < array.length; i++) { // ovde smo trazili min vrednost
+for (i = 1; i < array.length; i++) { // ovde smo trazili min vrednost
     if (array[i] < min){
         min = array[i];
     }
 }
 
 var secMin = array[0]; // ovde trazimo vrednost koja je sledece najmanja
-for (j = 0; j < array.length; j++) { // koristimo varijablu j jer smo i vec koristili i, imamo novu petlju
+for (j = 1; j < array.length; j++) { // koristimo varijablu j jer smo i vec koristili i, imamo novu petlju
     if (array[j] < secMin && array[j] !== min){ // ponovo trazimo najmanju vrednost s tim da ovaj
         secMin = array[j];                      // put imamo i uslov da ta vrednost nije min
     }
@@ -101,25 +101,35 @@ console.log(sum1);
 // 	Output: The array isn’t symmetric.
 
 var h = [2, 4, -2, 7, -2, 4, 2];
-var middleIndex = (h.length / 2) - 0.5;
-var typeOfArray;
+var start = h[0];
+var end = h[h.length-1];
+var isSymet = true;;
 
-if (h.length % 2 === 0) {
-    console.log("The array is not symmetric.")
-} else {
-    for (var i = 1; i <= middleIndex; i++){
-        if (h[middleIndex - i] !== h[middleIndex + i]){
-            typeOfArray = true;
-        }
-    }
-    if (typeOfArray === true){
-        console.log("The array is not symmetric.");
-    } else{
-        console.log("The array is symmetric.")
+for (start, end; start < end; start++, end--){
+    if(start !== end){
+        isSymet = false;
     }
 }
 
+if (isSymet){
+    console.log("The array is symmetric.");
+} else {
+    console.log("The array isn\'t symmetric.");
+}
 
+var a = [3, 4, 12, 8];
+var isSym = true;
+
+for (var start = 0, end = a.length - 1; start < end; start++, end--){
+    if (a[start] !== a[end]){
+        isSym = false;
+    }
+}
+if (isSym) {
+    console.log("The array is symmetric.")
+} else {
+    console.log("The array isn\'t symmetric.")
+}
 
 
 // 7. Write a program that intertwines two arrays. You can assume the arrays are of the same length. 
@@ -192,4 +202,17 @@ if (positOfIndex < a1.length) {
         }
     } 
 } 
+
+
+var t = 78;
+var positOfIndex = 3;
+var a1 = [2, -2, 33, 12, 5, 8];
+var a2 = [];
+
+for (var i = 0; i < a1.length; i++){
+    if (positOfIndex === i){
+        a2[positOfIndex] = t;
+    }
+    a2[a2.length] = a1[i];
+}
 console.log(a2);
