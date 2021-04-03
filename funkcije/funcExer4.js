@@ -48,9 +48,9 @@ function min(a){
             m = i;
         }  
     }
-    return min, m;
+    return "The min is " + min + " and index is " + m;
 }
-console.log(min([4, 2, 2, -1, 6]))
+console.log(min([4, 2, 2, -1, 6]));
 
 // 4.	Write a program that finds the second smallest number and prints out its value. 
 // Input array: [4, 2, 2, -1, 6]
