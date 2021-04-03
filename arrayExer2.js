@@ -100,13 +100,11 @@ console.log(sum1);
 // Input array: [3, 4, 12, 8]
 // 	Output: The array isn’t symmetric.
 
-var h = [2, 4, -2, 7, -2, 4, 2];
-var start = h[0];
-var end = h[h.length-1];
-var isSymet = true;;
+var h = [2, 4, -2, 7, -2, 4, 1];
 
-for (start, end; start < end; start++, end--){
-    if(start !== end){
+
+for (var start = 0, end = h.length - 1; start < end; start++, end--){
+    if(h[start] !== h[end]){
         isSymet = false;
     }
 }
