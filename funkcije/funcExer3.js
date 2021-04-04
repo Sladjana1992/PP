@@ -210,7 +210,7 @@ function frequent(arr){
             if(mostFre < count){
                 newArr = arr[i];
                 mostFre = count;
-                console.log(count)
+                // console.log(count);
             }
         }
         count = 0;
