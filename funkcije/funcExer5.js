@@ -214,3 +214,44 @@ function great(a, b){
 console.log(great(192, 42));
 console.log(great(81, 9));
 
+// 11. Sort a previously defined array. Place its sorted values into a new array whose values are 
+// equivalent to the first array's values multiplied by 2.
+// Input: [ 13, 11, 15, 5, 6, 1, 8, 12 ]
+// Output: [ 2, 10, 12, 16, 22, 24, 26, 30 ]
+
+function sort(arr){
+    var k;
+    for (var i = 0; i < arr.length; i++){
+        for (var j = i + 1; j < arr.length; j++){
+            if(arr[j] < arr[i]){
+                k = arr[i];
+                arr[i] = arr[j];
+                arr[j] = k; 
+            }
+        }
+        arr[i] = arr[i]*2;
+    }
+    return arr;
+}
+
+console.log(sort([ 13, 11, 15, 5, 6, 1, 8, 12 ]));
+
+// 12. Sort a previously defined array in a descending order and display it in the console.
+// Input:  [ 13, 11, 15, 5, 6, 1, 8, 12 ]
+// Output: [ 15, 13, 12, 11, 8, 6, 5, 1 ]
+
+function order(array){
+    var n;
+    for(var i = 0; i < array.length; i++){
+        for(var j = i + 1; j < array.length; j++){
+            if(array[i] < array[j]){
+                n = array[i];
+                array[i] = array[j];
+                array[j] = n;
+            }
+        }
+    }
+    return array;
+}
+
+console.log(order([ 13, 11, 15, 5, 6, 1, 8, 12 ]));
