@@ -194,3 +194,96 @@ function avg(a){
 
 console.log(avg([3, 3, 3]));
 
+
+// 13.	Write a function to find all the numbers greater than the average.
+
+function numbers(a){
+    var sum = 0;
+    var avrg = 0;
+    var g = [];
+    for (var i = 0; i < a.length; i++){
+        sum += a[i];
+    }
+    avrg = sum / a.length;
+    for (var i = 0; i < a.length; i++){
+        if(a[i] > avrg){
+            g[g.length] = a[i];
+        }
+    }
+    return g;
+}
+
+console.log(numbers([1, 3, 5, 7, 8, 10]));
+
+// 14.	The body mass index (BMI) is the ratio of the weight of a person (in kilograms) 
+// to the square of the height (in meters). Write a function that takes two parameters, 
+// weight and height, computes the BMI, and prints the corresponding BMI category:
+// ●	Starvation: less than 15
+// ●	Anorexic: less than 17.5
+// ●	Underweight: less than 18.5
+// ●	Ideal: greater than or equal to 18.5 but less than 25
+// ●	Overweight: greater than or equal to 25 but less than 30
+// ●	Obese: greater than or equal to 30 but less than 40
+// ●	Morbidly obese: greater than or equal to 40
+
+function bmi(w, h){
+    var index = w / (h * h);
+
+    if (index < 15){
+        console.log("Starvation");
+    } else if (index < 17.5){
+        console.log("Anorexic");
+    } else if (index < 18.5){
+        console.log("Underweight");
+    } else if (index >= 18.5 && index < 25){
+        console.log("Ideal");
+    } else if (index >= 25 && index < 30){
+        console.log("Overweight");
+    } else if (index >= 30 && index < 40){
+        console.log("Obese");
+    } else if (index >= 40){
+        console.log("Morbidly obese");
+    }
+    return index;
+}
+
+console.log(bmi([40, 1.59])); // ne rafi
+
+// 15.	Write a function that takes a list of strings and prints them, one per line, in a rectangular frame.:
+
+// For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
+// *********
+// * Hello *
+// * World *
+// * in    *
+// * a     *
+// * frame *
+// *********
+
+function frame(arr){
+    var result = "";
+    var size = arr[0].length;
+    for (var i = 0; i < arr.length; i++){
+        if(size < arr[i].length){
+            size = arr[i].length;
+        }
+    }
+
+    for (var i = 0; i < arr.length; i++){
+        for (var j = 0; j <= size + 1; j++){
+            if(i === 0 || i === arr.length|| j === 0 || j === size+1){
+                result += "*";
+                
+            }else {
+                result += " ";
+            }
+        }
+        
+        result += "\n";
+    }
+    return result;
+}                                       // do pola
+
+console.log(frame(["Hello", "World", "in", "a", "frame"]));
+
+
