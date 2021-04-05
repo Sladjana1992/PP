@@ -59,6 +59,35 @@ console.log(result);
 // *    *
 // *****
 
+function makeSquare(n){
+    var result = "";
+    var space = " ";
+    var star = "*";
+    var newLine = "\n";
+
+    for (var i = 0; i < n; i++){
+        // result += star;
+        // result += star;
+        // result += star;
+        // result += star;
+        // result += star;
+        // result += star;
+        // result += star;
+        // result += newLine;
+        for (var j = 0; j < n; j++){
+            if(i === 0 || i === n-1 || j === 0 || j === n-1){
+                result += star;
+            }else {
+                result += space;
+            }
+        }
+        result += newLine;
+    }
+    return result;
+}
+
+console.log(makeSquare(7));
+
 // function square(m){
 //     var row = "";
 //     for (var i = 1; i <= m; i++){
@@ -78,6 +107,25 @@ console.log(result);
 // var result = square(5);
 // console.log(result);
 
+// 6.	Write a program that draws a horizontal chart representing three given values. 
+// For example, if values are 5, 3, and 7, the program should draw:
+// * * * * *
+// * * *
+// * * * * * * *
+
+function makeChart() {
+    var result = "";
+
+    for(var i = 0; i < arguments.length; i++){
+        for(var j = 0; j < arguments[i]; j++){
+            result += "*";
+        }
+        result += "\n";
+    }
+    return result;
+}
+
+console.log(makeChart(6, 5, 4, 3));
 
 // 7. Write a program that calculates a number of digits of a given number. 
 
