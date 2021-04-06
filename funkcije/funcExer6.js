@@ -247,7 +247,7 @@ function bmi(w, h){
     return index;
 }
 
-console.log(bmi([40, 1.59])); // ne rafi
+console.log(bmi([40, 1.59])); // ne radi
 
 // 15.	Write a function that takes a list of strings and prints them, one per line, in a rectangular frame.:
 
