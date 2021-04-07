@@ -228,26 +228,26 @@ console.log(numbers([1, 3, 5, 7, 8, 10]));
 
 function bmi(w, h){
     var index = w / (h * h);
-
+    var string = "";
+    
     if (index < 15){
-        console.log("Starvation");
+        string += "Starvation";
     } else if (index < 17.5){
-        console.log("Anorexic");
+        string += "Anorexic";
     } else if (index < 18.5){
-        console.log("Underweight");
+        string += "Underweight";
     } else if (index >= 18.5 && index < 25){
-        console.log("Ideal");
+        string += "Ideal";
     } else if (index >= 25 && index < 30){
-        console.log("Overweight");
+        string += "Overweight";
     } else if (index >= 30 && index < 40){
-        console.log("Obese");
+        string += "Obese";
     } else if (index >= 40){
-        console.log("Morbidly obese");
+        string += "Morbidly obese";
     }
-    return index;
+    return string;
 }
-
-console.log(bmi([40, 1.59])); // ne radi
+console.log(bmi(40, 1.59)); 
 
 // 15.	Write a function that takes a list of strings and prints them, one per line, in a rectangular frame.:
 
