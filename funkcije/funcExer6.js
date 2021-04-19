@@ -205,6 +205,7 @@ function numbers(a){
         sum += a[i];
     }
     avrg = sum / a.length;
+    
     for (var i = 0; i < a.length; i++){
         if(a[i] > avrg){
             g[g.length] = a[i];
@@ -260,30 +261,72 @@ console.log(bmi(40, 1.59));
 // * frame *
 // *********
 
-function frame(arr){
-    var result = "";
-    var size = arr[0].length;
-    for (var i = 0; i < arr.length; i++){
-        if(size < arr[i].length){
-            size = arr[i].length;
-        }
-    }
+// function frame(arr){
+//     var result = "";
+//     var size = arr[0].length;
+//     for (var i = 0; i < arr.length; i++){
+//         if(size < arr[i].length){
+//             size = arr[i].length;
+//         }
+//     }
 
-    for (var i = 0; i < arr.length; i++){
-        for (var j = 0; j <= size + 1; j++){
-            if(i === 0 || i === arr.length|| j === 0 || j === size+1){
-                result += "*";
+//     for (var i = 0; i < arr.length; i++){
+//         for (var j = 0; j <= size + 1; j++){
+//             if(i === 0 || i === arr.length|| j === 0 || j === size+1){
+//                 result += "*";
                 
-            }else {
-                result += " ";
-            }
-        }
+//             }else {
+//                 result += " ";
+//             }
+//         }
         
-        result += "\n";
+//         result += "\n";
+//     }
+//     return result;
+// }                                       // do pola
+
+// console.log(frame(["Hello", "World", "in", "a", "frame"]));
+
+
+// *********
+// * Hello *
+// * World *
+// * in    *
+// * a     *
+// * frame *
+// *********
+
+function makeFrame(array){
+    var longWord = 0;
+    var star = "";
+    var topAndBottom = 0;
+    var middle = "";
+
+    function makeStringfromChar(char, num){
+        var stringChar = "";
+        for(var i = 0; i < num; i++){
+            stringChar += char;
+        }
     }
-    return result;
-}                                       // do pola
+    //nadji najduzu rec
+    for (var i = 0; i < array.length; i++){
+        if(longWord < array[i].length){
+            longWord = array[i].length;
+        }
+    }
+    
+    //napravi gornji i donji deo
+    topAndBottom = longWord + 4;
+    for(var j = 0; j < topAndBottom; j++){
+        star += "*";
+    }
+    
+    //napravi sredisnji deo
+    for(var l = 0; l < array.length; l++){
 
-console.log(frame(["Hello", "World", "in", "a", "frame"]));
+        middle += "* " + array[l] + "" + " *";
 
+    }
+    //spoji sve zajedno 
 
+}

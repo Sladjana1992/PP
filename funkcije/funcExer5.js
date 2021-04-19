@@ -222,19 +222,45 @@ console.log(great(81, 9));
 function sort(arr){
     var k;
     for (var i = 0; i < arr.length; i++){
-        for (var j = i + 1; j < arr.length; j++){
-            if(arr[j] < arr[i]){
-                k = arr[i];
-                arr[i] = arr[j];
-                arr[j] = k; 
+        for(var j = i+1; j < arr.lenght; j++){
+            if(a[j] < a[i]){
+                k = a[i];
+                a[i] = a[j];
+                a[j] = k;
             }
         }
-        arr[i] = arr[i]*2;
     }
     return arr;
 }
 
 console.log(sort([ 13, 11, 15, 5, 6, 1, 8, 12 ]));
+
+//drugi nacin
+
+// function sortAndMulti(array) {
+    
+//     var newArray = [];
+//     var min = array[0];
+//     var index = 0;
+
+//     for (var i = 0; i < array.length; i++) {
+//         for (var j = 0; j <array.length; j++) {
+//             if (array[j] < min ) {
+//                 min = array[j]
+//                 index = j;
+//             }
+//         }
+        
+//         newArray[i] = min * 2;
+//         array[index] = Infinity;
+//         min = Infinity;
+//     }
+
+//     return newArray;
+// }
+
+// console.log(sortAndMulti([13, 11, 15, 5, 6, 1, 8, 12]));
+
 
 // 12. Sort a previously defined array in a descending order and display it in the console.
 // Input:  [ 13, 11, 15, 5, 6, 1, 8, 12 ]
