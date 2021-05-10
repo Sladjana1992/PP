@@ -281,3 +281,15 @@ function order(array){
 }
 
 console.log(order([ 13, 11, 15, 5, 6, 1, 8, 12 ]));
+
+
+(
+    function sum(arr){
+    var sum1 = 0;
+    for(var i = 0; i < arr.length; i++){
+        sum1 += arr[i];
+    }
+    return sum1;
+    
+}
+)();

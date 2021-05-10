@@ -330,3 +330,4 @@ function makeFrame(array){
     //spoji sve zajedno 
 
 }
+
