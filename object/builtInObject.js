@@ -396,11 +396,112 @@ function newAirplan (departure, arrival) {
     var hoursDep = departure.split(":");
     var hoursAri = arrival.split(":");
 
-    var restHours = hoursAri[0] - hoursDep[0];
-    var restMin = hoursAri[1] - hoursDep[1];
-    var resSec = hoursAri[2] - hoursDep[2];
+    var restSec = 0;
+    if(hoursAri[2] > hoursDep[2]){
+        restSec = hoursAri[2] - hoursDep[2];
+    } else {
+        restSec = hoursAri[2] - hoursDep[2] + 60;
+    }
 
-    return restHours + " hours " + restMin + " minutes " + resSec + " seconds.";
+    var restMin = 0;
+    if(hoursAri[1] > hoursDep[1]){
+        restMin = hoursAri[1] - hoursDep[1];
+    } else {
+        restMin = hoursAri[1] - hoursDep[1] + 59;
+    }
+
+    var restHours = 0;
+    if(hoursAri[0] > hoursDep[0]){
+        restHours = hoursAri[0] - hoursDep[0];
+    } else {
+        restHours = hoursAri[0] - hoursDep[0] + 23;
+    }
+
+    return restHours + " hours " + restMin + " minutes " + restSec + " seconds.";
 }
 
-console.log(newAirplan("8:22:13", "11:20:8"));
+console.log(newAirplan("08:22:13", "11:23:18"));
+console.log(newAirplan("08:22:13", "07:20:08"));
+
+
+// 10a. Write a constructor function that creates points in space. Each point in space has
+// its own x, y, and z coordinate. For example, (3, 5, 1) can be a point in space.
+
+
+console.log("---------------------Exer 10a -----------------------");
+
+
+function Points (x, y, z) {
+    this.x = x,
+    this.y = y,
+    this.z = z
+}
+
+var coordinate_1 = new Points (1, 7, 2);
+var coordinate_2 = new Points (2, 8, 1);
+
+console.log(coordinate_1);
+console.log(coordinate_2);
+
+// 10b. Write a function that calculates the distance between two points in the space.
+
+console.log("---------------------Exer 10b -----------------------");
+
+// 11a. Write a function that generates a random integer value between 5 and 20.
+
+console.log("---------------------Exer 11a -----------------------");
+
+// ((max - min) * Math.random()) + min - formula
+
+function random5_20 (max, min) {
+    var f = ((max - min) * Math.random()) + min;
+    return Math.round(f);
+}
+
+console.log(random5_20(5, 20))
+
+// 11b. Write a function that generates a random integer value between 50 and 100.
+
+console.log("---------------------Exer 11b -----------------------");
+
+
+function random50_100 () {
+    var f = (50 * Math.random()) + 50;
+    return Math.round(f);
+}
+
+console.log(random50_100());
+
+// 11c. Write a function which expects a number and a callback generator function and
+// returns an array of numbers produced by the generator function.
+
+console.log("---------------------Exer 11c -----------------------");
+
+function generator (arrlength, func) {
+    var newArr = [];
+    for (var i = 0; i < arrlength; i++){
+        newArr.push(func());
+    }
+    return newArr;
+}
+
+console.log(generator(7, random50_100));
+
+// 12. Write a function that shuffles the elements of a given array.
+
+// Input: [3, 6, 11, 2, 9, 1]
+
+// Output: [6, 2, 9, 1, 3, 11] (it can be any random permutation of the given array)
+
+function shuffles (arr) {
+    for (var i = arr.length - 1; i > 0; i--){
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    return arr;
+}
+
+console.log(shuffles([3, 6, 11, 2, 9, 1]));
