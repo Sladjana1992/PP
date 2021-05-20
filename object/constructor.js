@@ -32,7 +32,7 @@ function Recipe (name, typeOFcusine, complexity, listOfIngredients, preparingTim
             }
         }
         this.ingredients = list;
-    }
+    };
 
 }
 
