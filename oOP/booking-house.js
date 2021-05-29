@@ -1,11 +1,26 @@
+  
+'use strict';
+
 
 (function () {
 
-    function Country (name, odds) {
-        if(!name || !odds){
-            throw new Error ("Input name or surname are required.");
+
+    var continent = {
+        EUROPA: "EU",
+        ASIA: "AS",
+        AFRICA: "AF",
+        SOUTH_AMERICA: "SA",
+        NORTH_AMERICA: "NA",
+        AUSTRALIA: "AU"
+    };
+
+
+    function Country (name, odds, continent) {
+        if(!name || !odds || !continent){
+            throw new Error ("Input name, odds, or continent are required.");
         }
-        this.listOfContinents = ["EU", "AS", "AF", "SA", "NA", "AU"];
+        this.continent = continent;
+       
         this.name = name;
         this.odds = odds;
     }
@@ -14,9 +29,22 @@
         if(!name || !surname || !dateOfBirth) {
             throw new Error ("Input name or surname are required.");
         }
-        this.name = name;
-        this.surname = surname;
+        this.name = name.charAt(0).toUpperCase() + name.slice(1);
+        this.surname = surname.charAt(0).toUpperCase() + surname.slice(1);
         this.dateOfBirth = new Date (dateOfBirth);
+
+        this.getDate = function () {
+            var day = this.dateOfBirth.getDate();
+            var month = this.dateOfBirth.getMonth() + 1;
+            var year = this.dateOfBirth.getFullYear();
+            var result = this.name + " " + this.surname + " " + day + "." + month + "." + year +".";
+            return result;
+        }
+
+        this.getYear = function () {
+            var today = new Date ();
+            return (today.getFullYear() - this.dateOfBirth.getFullYear());
+        }
     }
 
     function Player (person, betAmount, country) {
@@ -33,6 +61,13 @@
         this.person = person;
         this.betAmount = betAmount;
         this.country = country;
+
+        this.getDate = function () {
+            var result = this.country.name + ", " + (this.country.odds * this.betAmount).toFixed(2) + 
+            " eur, " + this.person.name + " " + this.person.surname + " " + this.person.getYear() + 
+            " years";
+            return result;
+        }
     }
 
     function Address (country, city, postalCode, street, number) {
@@ -48,6 +83,13 @@
         this.postalCode = postalCode;
         this.street = street;
         this.number = number;
+
+        this.getAdress = function () {
+            var result = this.street + " " + this.number +", " + this.postalCode + " " + this.city
+            + this.country;
+            return result;
+
+        }
     }
     
     function BettingPlace (address) {
@@ -57,6 +99,10 @@
 
         this.address = address;
         this.listOfPlayers = [];
+
+        this.getData = function () {
+            var result = this.address.street + ", "
+        }
     }
 
     function BettingHouse (competition, numberOfPlayers) {
@@ -71,6 +117,12 @@
 
     //testing
     var person1 = new Person ("Sladjana", "Culum", "Dec 21 1992")
+    var country1 = new Country ("SR" , 0.5, continent.ASIA)
+    var player = new Player (person1, 1250, country1);
+     
 
-    console.log(person1);
+    console.log(person1.getDate());
+    console.log(player.getDate());
+    console.log(country1);
+
 })();
