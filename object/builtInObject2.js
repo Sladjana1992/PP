@@ -77,3 +77,37 @@ console.log(sortName("John Snow"));
 // "00000000", "123", "r" -- 12300000
 
 console.log("--------------------- 6 --------------------");
+
+function replace (string) {
+    
+}
+
+
+// 7. Write a function to capitalize the first letter of a string and returns modified string.
+// "js string exercises" -- "Js string exercises"
+
+console.log("--------------------- 7 --------------------");
+
+function modified (string) {
+    var firstLetter = string.charAt(0).toUpperCase() + string.slice(1);
+
+    return firstLetter;
+}
+
+
+console.log(modified("js string exercises"));
+
+// 8. Write a function to hide email addresses to protect them from unauthorized users.
+// "somerandomaddress@example.com" -- "somerand...@example.com"
+
+console.log("--------------------- 8 --------------------");
+
+function email (string) {
+    var firstSlice = string.slice(0, 7);
+    var index = string.indexOf("@");
+    var secondSlice = string.slice(index, string.length);
+
+    return firstSlice + secondSlice;
+}
+
+console.log("somerandomaddress@example.com");
