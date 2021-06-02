@@ -62,12 +62,13 @@
         this.betAmount = betAmount;
         this.country = country;
 
-        this.getDate = function () {
+        this.getAdress = function () {
             var result = this.country.name + ", " + (this.country.odds * this.betAmount).toFixed(2) + 
             " eur, " + this.person.name + " " + this.person.surname + " " + this.person.getYear() + 
             " years";
             return result;
         }
+            
     }
 
     function Address (country, city, postalCode, street, number) {
@@ -100,8 +101,16 @@
         this.address = address;
         this.listOfPlayers = [];
 
-        this.getData = function () {
-            var result = this.address.street + ", "
+        this.getAdress = function () {
+            var result = this.address.street + ", " + this.address.postalCode + " " +
+            this.address.city + ", sum of all bets: " + + "eur"
+        }
+
+        this.sumOfAllBets = function () {
+            var count = 0;
+            for(var i = 0; i < this.listOfPlayers.length; i++){
+                count += this.listOfPlayers[i].betAmount;
+            }
         }
     }
 
@@ -113,6 +122,21 @@
         this.competition = competition;
         this.numberOfPlayers = numberOfPlayers;
         this.listOfBettingPlaces = [];
+
+        this.addPlayers = function (player) {
+            if(!player || !(player instanceof Person)){
+                throw new Error ("Invalid player input.")
+            }
+            return this.listOfBettingPlaces.push(player);
+        }
+    }
+
+    function createPlayers (name, surname, dateOfBirth) {
+        return new Player(name, surname, dateOfBirth);
+    }
+
+    function createBettingPlace(competition, numberOfPlayers) {
+        return new BettingHouse (competition, numberOfPlayers);
     }
 
     //testing
@@ -121,8 +145,17 @@
     var player = new Player (person1, 1250, country1);
      
 
-    console.log(person1.getDate());
-    console.log(player.getDate());
+    console.log(person1.getAdress());
+    console.log(player.getAdress());
     console.log(country1);
 
 })();
+
+// Football World Cup Winner, 2 betting places, 4 bets
+// 	Nemanjina, 11000 Belgrade, sum of all bets: 2100eur
+// 		SR, 1050.00 eur, Pera Peric, 29 years
+// 		SR, 1050.00 eur, Pera Peric, 29 years
+// Nemanjina, 11000 Belgrade, sum of all bets: 2100eur
+// 		GR, 1050.00 eur, Pera Peric, 29 years
+// 		SR, 1050.00 eur, Pera Peric, 29 years
+// There are 3 bets on Serbia
