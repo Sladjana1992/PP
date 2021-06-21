@@ -23,6 +23,10 @@ input {
     border: 1px ridge;
 }
 
+input:focus::placeholder {
+    color:transparent;
+}
+
 label {
     margin: 8px;
 }
