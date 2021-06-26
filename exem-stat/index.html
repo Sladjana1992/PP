@@ -13,19 +13,21 @@
         <div class="div-bgImg">
             <h2>Exam Statistic June</h2>
             <p id="count"></p>
-            <table>
-                <td id="passed">PASSED
-                    <tr></tr>
-                </td>
-                <td id="failed">FAILED
-                    <tr></tr>
-                </td>
-            </table>
+            <div>
+                <div id="passed">PASSED
+                    <span class="add-stat-pass"></span>
+                </div>
+                <div id="failed">FAILED
+                    <span id="add-stat-fail"></span>
+                </div>
+            </div>
         </div>
         <form action="">
             <div class="div-form">
                 <select name="" id="adding-subject">
                     <option value="JavaScript">JavaScript</option>
+                    <option value="Web">Web</option>
+                    <option value="PHP">PHP</option>
                 </select>
                 <input id="student-name" value="" type="text" placeholder="Name Surname">
                 <input id="student-grade" value="" type="text" placeholder="Grade">
