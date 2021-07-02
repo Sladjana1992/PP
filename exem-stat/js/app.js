@@ -39,13 +39,10 @@ function addStudentToListHandler () {
         createLiElementNode.textContent = addingStudentExam.getExamInfo() + "    " +
         studentGradeValidNode.value;
         addStudentToFailListNode.appendChild(createLiElementNode);
-        
-        var procentOfFail = Math.floor(addFailed.length/(addPassed.length + addFailed.length)*100) + "%";
-        headStatOfFailNode.textContent = addFailed.length + " " + procentOfFail;
-
-
-
     }
+    var procentOfFail = Math.floor(addFailed.length/(addPassed.length + addFailed.length)*100) + "%";
+    headStatOfFailNode.textContent = addFailed.length + " " + procentOfFail;
+
     addNewSubjectNode.value = "JavaScript";
     studentFullNameValidNode.value = "";
     studentGradeValidNode.value = "";
