@@ -88,3 +88,9 @@ form {
 #div-failed {
     color: rgb(254,200,199);
 }
+
+.text {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
