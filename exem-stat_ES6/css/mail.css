@@ -1,0 +1,96 @@
+
+
+body {
+    width: 70%;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.div-bgImg {
+    background-image: url(./book.jpg);
+    height: 250px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#passed{
+    background-color: rgb(51,184,180);
+    width: 250px;
+    height: 30px;
+    padding-left: 5px;
+    margin: 0 auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    padding-top: 10px;
+    
+}
+
+#failed{
+    background-color: rgb(252,82,79);
+    width: 250px;
+    height: 30px;
+    padding-left: 5px;
+    margin: 0 auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    padding-top: 10px;
+    margin-top: 5px;
+    
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+form {
+    margin: 0px auto;
+    background-color: rgb(247,247,247);
+    width: 100%;
+    height: 50px;
+}
+
+.div-form { 
+    padding: 15px;
+    padding-left: 230px;
+}
+
+#btn {
+    border: none;
+    color: rgb(44,183,179);
+    background-color: rgb(247,247,247);
+    font-size: 19px;
+    cursor: pointer;
+}
+
+#div-passed, #div-failed {
+    box-sizing: border-box;
+    display: inline-table;
+    margin-top: 50px;
+    margin-left: 120px;
+    text-transform: uppercase;
+    width: 300px;
+    
+}
+
+#pass-border, #fail-border{
+    width: 300px;
+    border-bottom: 2px solid rgb(242,242,242);
+}
+
+#div-passed {
+    color: rgb(163,163,163);
+}
+
+#div-failed {
+    color: rgb(254,200,199);
+}
+
+.text {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}

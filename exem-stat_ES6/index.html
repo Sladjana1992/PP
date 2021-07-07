@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exem Statistic</title>
+    <link rel="stylesheet" href="./css/mail.css">
+</head>
+<body>
+    <h1>Exam statistics</h1>
+    <div>
+        <div class="div-bgImg">
+            <h2>Exam Statistic June</h2>
+            <p class="text">Total students: %count%</p>
+            <p id="count"></p>
+            <div>
+                <div id="passed">PASSED
+                    <span class="add-stat-pass"></span>
+                </div>
+                <div id="failed">FAILED
+                    <span id="add-stat-fail"></span>
+                </div>
+            </div>
+        </div>
+        <form action="">
+            <div class="div-form">
+                <select name="" id="adding-subject">
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Web">Web</option>
+                    <option value="PHP">PHP</option>
+                </select>
+                <input id="student-name" value="" type="text" placeholder="Name Surname">
+                <input id="student-grade" value="" type="text" placeholder="Grade">
+                <input type="button" value="ADD" id="btn">
+            </div>
+        </form>
+
+        <div id="div-passed">
+            <h4 id="pass-border">passed</h4>
+            <ul id="passed-list"></ul>
+        </div>
+         <div id="div-failed">
+             <h4 id="fail-border">failed</h4>
+             <ul id="failed-list"></ul>
+        </div>
+    </div>
+    <script src="my_jquery_functions.js"></script>
+    
+    <script src="./js/subject.js"></script>
+    <script src="./js/student.js"></script>
+    <script src="./js/exam.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
