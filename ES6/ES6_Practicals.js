@@ -28,33 +28,33 @@ console.log("*****************Exer 2******************");
 
 const products = [{ name: "Banana", price: 120 }, { name: "Orange", price: 100 }];
 
-// const productWithTax = products.map(product => {
+const productWithTax = products.map(product => {
 
-//     const { price: productPrice } = product;
-//     const { name: nesto} = product;
+    const { price: productPrice } = product;
+    const { name: nesto} = product;
     
-//     const newProd = {
-//         //...product
-//         name: nesto,
-//         price: Number.parseFloat(productPrice),
-//         priceWithTax: productPrice * 0.2 + productPrice,
-//         tax: productPrice * 0.2
-//     }
-//     return newProd;
-// })
+    const newProd = {
+        //...product
+        name: nesto,
+        price: Number.parseFloat(productPrice),
+        priceWithTax: productPrice * 0.2 + productPrice,
+        tax: productPrice * 0.2
+    }
+    return newProd;
+})
 
 
-let productWithTax = (...args) => {
-    args.map(product => {
-        const priceNew = product.price;
+// let productWithTax = (...args) => {
+//     args.map(product => {
+//         const priceNew = product.price;
     
-        const newProd = {
-            ...args,
-            price: priceNew * 1.2
-        }
-        return newProd;
-    })
-}
+//         const newProd = {
+//             ...args,
+//             price: priceNew * 1.2
+//         }
+//         return newProd;
+//     })
+// }
 // console.log(products);
 console.log(productWithTax([{ name: "Banana", price: 120 }, { name: "Orange", price: 100 }]));
 
@@ -214,7 +214,7 @@ let personOlderThan25 = arr => {
 console.log(personOlderThan25(arrObj));
 
 let personOlderThan40 = arr =>{
-    let older = arrObj.filter(person => {
+    let older = arr.filter(person => {
         if(person.age > 40) {
             return true;
         }
@@ -224,7 +224,7 @@ let personOlderThan40 = arr =>{
     })
 }
 
-
+console.log(personOlderThan25(arrObj));
 
 
 console.log("*****************Exer 10******************");
@@ -242,3 +242,37 @@ let filterArrNew = (arr) => {
 }
  console.log(filterArrNew([3, 11, 9, 5, 6]));
 
+ console.log("*****************Exer 11******************");
+
+
+//  Write a function that calculates the product of the elements of the array.
+//  Input: [2, 8, 3]
+//  Output: 48
+
+let arr = [2, 8, 3];
+
+let arrProd = (arr) => {
+    let first = arr[0];
+    for (let i = 1; i < arr.length; i++){
+        first *= arr[i];
+    }
+    return first;
+}
+
+console.log(arrProd(arr));
+
+
+console.log("*****************Exer 12******************");
+
+
+// Write a function that calculates the maximum of the given array. 
+//     Input: [2, 7, 3, 8, 5.4] 
+// 	Output: 8
+
+let arr = [2, 7, 3, 8, 5.4];
+
+let maxNumber = arr => {
+    return Math.max(...arr);
+}
+
+console.log(maxNumber(arr));
